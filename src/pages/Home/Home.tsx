@@ -1,11 +1,28 @@
-import  { FC } from 'react';
+import { FC } from "react";
 
-const Home:FC = () => {
-    return (
-        <div>
-            I'm Home Page
-        </div>
-    );
+//components
+import GenericCard from "../../components/GenericCard/GenericCard";
+//css
+import './Home.css'
+
+import { RECIPES_TEST } from "../../consts/recipes";
+
+const Home: FC = () => {
+  return (
+    <div className="wrapper">
+      {RECIPES_TEST.map((element, index) => (
+        <GenericCard
+          key={index}
+          name={element.name}
+          img={element.img}
+          userName={element.userName}
+          ingredients={element.ingredients}
+          likes={element.likes}
+          recipeId={element.recipeId}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Home;
