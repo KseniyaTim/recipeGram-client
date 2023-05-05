@@ -2,8 +2,7 @@ import { FC } from "react";
 
 //components
 import GenericCard from "../../components/GenericCard/GenericCard";
-//css
-import './Home.css'
+
 
 import { RECIPES_TEST } from "../../consts/recipes";
 

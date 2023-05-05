@@ -1,0 +1,20 @@
+.AddWrapper{
+    margin: 2rem 0 0 8rem;
+}
+
+.button{
+padding: 2rem 0 2rem 0;
+}
+
+.ingredientField{
+    padding-bottom: 1rem;
+}
+
+.semiTitle{
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+}
+
+.photoField{
+padding-top: 1rem;
+}
