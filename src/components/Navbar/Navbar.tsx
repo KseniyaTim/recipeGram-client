@@ -1,11 +1,10 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-const Navbar:FC = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const Navbar: FC = () => {
+  return <div>
+
+    
+  </div>;
 };
 
 export default Navbar;
