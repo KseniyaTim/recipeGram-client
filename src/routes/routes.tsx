@@ -2,9 +2,10 @@
 import Home from "../pages/Home/Home";
 import Profile from "../pages/Profile/Profile";
 import AddRecipe from "../pages/AddRecipe/AddRecipe";
+import Recipe from "../pages/Recipe/Recipe";
 
 //routes 
-import { HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, PROFILE_ROUTE, ADD_RECIPE_ROUTE} from "../consts/routeConsts";
+import { HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, PROFILE_ROUTE, ADD_RECIPE_ROUTE, RECIPE_ROUTE} from "../consts/routeConsts";
 
 const RouteMaster = [
   {
@@ -26,7 +27,11 @@ const RouteMaster = [
   {
     path: ADD_RECIPE_ROUTE,
     component: AddRecipe
-  }
+  },
+  {
+    path: RECIPE_ROUTE,
+    component: Recipe
+  },
 
 ];
 export default RouteMaster;

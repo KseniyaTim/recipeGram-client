@@ -4,18 +4,18 @@ import React, { FC } from "react";
 import { Card, CardContent } from "@mui/material";
 
 //interface
-import { IGenericCard } from "./IGenericCard";
+import { IGenericRecipe } from "./IGenericRecipe";
 
 //style
-import "./GenericCard.css";
+import "./GenericRecipe.css";
 
-const GenericCard: FC<IGenericCard> = ({
+const GenericRecipe: FC<IGenericRecipe> = ({
   img,
   ingredients,
   likes,
   name,
   userName,
-  recipeId
+  recipeId,
 }) => {
   return (
     <div className="cardWrapper">
@@ -27,8 +27,10 @@ const GenericCard: FC<IGenericCard> = ({
               <img src={img} className="image" />
               <div>Made by: {userName}</div>
               <div className="likes">
-                <div className="like">{likes} likes</div>  
-                <span className="material-symbols-outlined heart">favorite</span>
+                <div className="like">{likes} likes</div>
+                <span className="material-symbols-outlined heart">
+                  favorite
+                </span>
               </div>
             </div>
             <div className="rightSide">
@@ -40,7 +42,12 @@ const GenericCard: FC<IGenericCard> = ({
               </div>
             </div>
           </div>
-          <div className="more" onClick={() => {console.log(recipeId)}}>
+          <div
+            className="more"
+            onClick={() => {
+              console.log(recipeId);
+            }}
+          >
             for full recipe
             <span className="material-symbols-outlined">arrow_forward_ios</span>
           </div>
@@ -50,4 +57,4 @@ const GenericCard: FC<IGenericCard> = ({
   );
 };
 
-export default GenericCard;
+export default GenericRecipe;
