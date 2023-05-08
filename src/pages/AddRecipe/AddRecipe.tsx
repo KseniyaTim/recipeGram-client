@@ -6,8 +6,18 @@ import { Button, TextField } from "@mui/material";
 //css
 import "./AddRecipe.css";
 
+//axios
+import axios from "axios";
+
 const AddRecipe: FC = () => {
   const [ingredientFields, setIngredientFields] = useState<number[]>([]);
+
+
+  //axios - add recipe 
+  const addRecipe = () => {
+    axios.post('http://localhost:5000/recipe/add').then(() => {
+    })
+  }
 
   return (
     <div className="AddWrapper">
@@ -47,7 +57,7 @@ const AddRecipe: FC = () => {
         }}
       />
       <div className="button">
-        <Button variant="contained">Publich Recipe</Button>
+        <Button variant="contained" onClick={()=> {addRecipe()}}>Publich Recipe</Button>
       </div>
     </div>
   );
