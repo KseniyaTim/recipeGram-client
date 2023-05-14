@@ -4,8 +4,8 @@ export interface IProfile{
     firstName: string
     lastName: string 
     age: number
-    img: string
+    img?: string
     email: string
     password: string
-    recipes: IGenericRecipe[]
+    recipes?: IGenericRecipe[]
 }

@@ -12,7 +12,7 @@ const Navbar: FC = () => {
   const history = useHistory()
   return (
     <>
-      <div className="navbarwWrapper">
+      <div className="navbarWrapper">
         <div className="mainTitle" onClick={() => {history.push(HOME_ROUTE)}}>RecipeGram</div>
         <div>
           <span className="material-symbols-outlined icon" onClick={() => {history.push(ADD_RECIPE_ROUTE)}}>add</span>
