@@ -4,6 +4,7 @@ import Profile from "../pages/Profile/Profile";
 import AddRecipe from "../pages/AddRecipe/AddRecipe";
 import Recipe from "../pages/Recipe/Recipe";
 import Register from "../pages/Register/Register";
+import Login from "../pages/Login/Login";
 
 //routes
 import {
@@ -20,10 +21,10 @@ const RouteMaster = [
     path: HOME_ROUTE,
     component: Home,
   },
-  // {
-  //   path: LOGIN_ROUTE,
-  //   component: Login,
-  // },
+  {
+    path: LOGIN_ROUTE,
+    component: Login,
+  },
   {
     path: REGISTER_ROUTE,
     component: Register,
@@ -36,9 +37,9 @@ const RouteMaster = [
     path: ADD_RECIPE_ROUTE,
     component: AddRecipe,
   },
-  {
-    path: RECIPE_ROUTE,
-    component: Recipe,
-  },
+  // {
+  //   path: RECIPE_ROUTE,
+  //   component: Recipe,
+  // },
 ];
 export default RouteMaster;

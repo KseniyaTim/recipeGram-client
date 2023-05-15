@@ -8,6 +8,10 @@ export const REGISTER_FIELDS = [
     property: "lastName",
   },
   {
+    label: "Image URL",
+    property: "img",
+  },
+  {
     label: "Age",
     property: "age",
   },
