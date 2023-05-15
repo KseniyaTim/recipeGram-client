@@ -6,7 +6,7 @@ import { IProfile } from "./IProfile";
 //axios
 import axios from "axios";
 
-//routing 
+//routing
 import { useHistory } from "react-router-dom";
 import { LOGIN_ROUTE } from "../../consts/routeConsts";
 
@@ -21,19 +21,19 @@ const Profile: FC = () => {
 
   const history = useHistory();
 
-  const codedId = localStorage.getItem("userIdToken")?.toString();
 
   useEffect(() => {
+    const codedId = localStorage.getItem("userIdToken");
     if (!codedId) {
       history.push(LOGIN_ROUTE);
     }
     axios.defaults.headers.common["Authorization"] = `Bearer ${codedId}`;
-    console.log(codedId);
-    axios
-      .get<IProfile>("http://localhost:5000/user/get")
-      .then(({ data }) => {
+    codedId && console.log(codedId);
+    if (codedId) {
+      axios.get<IProfile>("http://localhost:5000/user/get").then(({ data }) => {
         setUser(data);
       });
+    }
   }, []);
 
   return (

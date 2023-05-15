@@ -1,9 +1,21 @@
+//react
 import { FC, useState } from "react";
+
+// consts
 import { LOGIN_FIELDS } from "../../consts/loginFields";
+
+//mui
 import { Button, TextField } from "@mui/material";
+
+//axios
 import axios from "axios";
+
+// routing
 import { useHistory } from "react-router-dom";
 import { PROFILE_ROUTE, REGISTER_ROUTE } from "../../consts/routeConsts";
+
+//css
+import './Login.css'
 
 const Login: FC = () => {
   const [userLogin, setUserLogin] = useState({
@@ -26,9 +38,6 @@ const Login: FC = () => {
         const { userId } = data;
         localStorage.setItem("userIdToken", userId);
         console.log("Login successful!");
-        return "";
-      })
-      .then(() => {
         history.push(PROFILE_ROUTE);
       })
       .catch((error) => {
@@ -37,9 +46,9 @@ const Login: FC = () => {
   };
 
   return (
-    <div>
+    <div className="loginFieldsWrapper">
       {LOGIN_FIELDS.map((field, index) => (
-        <div key={index}>
+        <div key={index} className="field">
           <TextField
             id="outlined-basic"
             label={field.label}
@@ -50,7 +59,7 @@ const Login: FC = () => {
           />
         </div>
       ))}
-      <div>
+      <div className="loginBtn">
         <Button
           variant="contained"
           onClick={() => {
@@ -60,7 +69,7 @@ const Login: FC = () => {
           Login
         </Button>
       </div>
-      <div onClick={() => {history.push(REGISTER_ROUTE)}}>Don't have an account yet? join now</div>
+      <div className="registerLink" onClick={() => {history.push(REGISTER_ROUTE)}}>Don't have an account yet? join now</div>
     </div>
   );
 };
