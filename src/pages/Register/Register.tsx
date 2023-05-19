@@ -25,8 +25,8 @@ const Register: FC = () => {
   };
 
   const registerUser = (user: IProfile) => {
-    axios.post("http://localhost:5000/user/add", user).then(() => {
-      history.push(LOGIN_ROUTE)
+    axios.post("http://localhost:4000/user/add", user).then(() => {
+      history.push(LOGIN_ROUTE);
     });
   };
 
@@ -59,4 +59,3 @@ const Register: FC = () => {
 };
 
 export default Register;
-

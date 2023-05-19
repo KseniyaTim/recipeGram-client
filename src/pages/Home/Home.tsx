@@ -4,7 +4,6 @@ import { FC, useEffect, useState } from "react";
 import GenericRecipe from "../../components/GenericRecipe/GenericRecipe";
 
 //consts
-import { RECIPES_TEST } from "../../consts/recipes";
 import { IGenericRecipe } from "../../components/GenericRecipe/IGenericRecipe";
 import axios from "axios";
 
@@ -13,10 +12,11 @@ const Home: FC = () => {
 
   useEffect(() => {
     try {
-      axios.get<IGenericRecipe[]>("http://localhost:5000/recipe/all").then(({ data }) => {
-        console.log("ok");
-        setRecipes(data);
-      });
+      axios
+        .get<IGenericRecipe[]>("http://localhost:4000/recipe/all")
+        .then(({ data }) => {
+          setRecipes(data);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +24,7 @@ const Home: FC = () => {
 
   return (
     <div className="wrapper">
-      {RECIPES_TEST.map((element, index) => (
+      {recipes.map((element, index) => (
         <GenericRecipe key={index} {...element} />
       ))}
     </div>

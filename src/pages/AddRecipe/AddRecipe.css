@@ -6,15 +6,17 @@
 padding: 2rem 0 2rem 0;
 }
 
-.ingredientField{
+.fields{
     padding-bottom: 1rem;
 }
 
 .semiTitle{
     font-size: 1.6rem;
     padding-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .photoField{
 padding-top: 1rem;
 }
+

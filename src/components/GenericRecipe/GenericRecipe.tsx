@@ -12,10 +12,8 @@ import "./GenericRecipe.css";
 const GenericRecipe: FC<IGenericRecipe> = ({
   img,
   ingredients,
-  likes,
   name,
-  userName,
-  recipeId,
+  userName
 }) => {
   return (
     <div className="cardWrapper">
@@ -26,12 +24,6 @@ const GenericRecipe: FC<IGenericRecipe> = ({
               <div className="title">{name}</div>
               <img src={img} className="image" />
               <div>Made by: {userName}</div>
-              <div className="likes">
-                <div className="like">{likes} likes</div>
-                <span className="material-symbols-outlined heart">
-                  favorite
-                </span>
-              </div>
             </div>
             <div className="rightSide">
               <div className="title">Ingredients:</div>
@@ -45,7 +37,7 @@ const GenericRecipe: FC<IGenericRecipe> = ({
           <div
             className="more"
             onClick={() => {
-              console.log(recipeId);
+              console.log("ok");
             }}
           >
             for full recipe

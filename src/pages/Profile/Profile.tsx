@@ -3,12 +3,8 @@ import { FC, useEffect, useState } from "react";
 //interface
 import { IProfile } from "./IProfile";
 
-//axios
-import axios from "axios";
-
 //routing
 import { useHistory } from "react-router-dom";
-import { LOGIN_ROUTE } from "../../consts/routeConsts";
 
 //components
 import MiniRecipe from "../../components/MiniRecipe/MiniRecipe";
@@ -16,23 +12,24 @@ import MiniRecipe from "../../components/MiniRecipe/MiniRecipe";
 //css
 import "./Profile.css";
 
+//context
+import { useUserInfoUpdate } from "../../context/contextTheme";
+import { LOGIN_ROUTE } from "../../consts/routeConsts";
+
 const Profile: FC = () => {
   const [user, setUser] = useState<IProfile>({} as IProfile);
 
   const history = useHistory();
 
+  const { userInfo } = useUserInfoUpdate();
 
   useEffect(() => {
-    const codedId = localStorage.getItem("userIdToken");
-    if (!codedId) {
+    const token = localStorage.getItem("userIdToken");
+    if (token) {
+      setUser(userInfo);
+      console.log(userInfo);
+    } else {
       history.push(LOGIN_ROUTE);
-    }
-    axios.defaults.headers.common["Authorization"] = `Bearer ${codedId}`;
-    codedId && console.log(codedId);
-    if (codedId) {
-      axios.get<IProfile>("http://localhost:5000/user/get").then(({ data }) => {
-        setUser(data);
-      });
     }
   }, []);
 
@@ -55,9 +52,6 @@ const Profile: FC = () => {
 
       <div>
         <div className="recipesContainer"> Your Recipes Are:</div>
-        {user.recipes?.map((element, index) => (
-          <MiniRecipe key={index} {...element} />
-        ))}
       </div>
     </div>
   );

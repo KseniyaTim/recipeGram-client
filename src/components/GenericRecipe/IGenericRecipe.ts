@@ -1,9 +1,8 @@
 export interface IGenericRecipe {
   name: string;
+  userName: string
   img: string;
-  userName: string;
-  likes: number;
+  userId: string;
   ingredients: string[];
-  instructins: string[]
-  recipeId: number;
+  instructions: string[]
 }

@@ -7,5 +7,5 @@ export interface IProfile{
     img?: string
     email: string
     password: string
-    recipes?: IGenericRecipe[]
+    _id: string
 }

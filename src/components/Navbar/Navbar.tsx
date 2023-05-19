@@ -11,13 +11,16 @@ import {
 //css
 import "./Navbar.css";
 
+//context
+import {  useUserInfoUpdate } from "../../context/contextTheme";
+import { IProfile } from "../../pages/Profile/IProfile";
+
+
 const Navbar: FC = () => {
 
   const authToken = localStorage.getItem("userIdToken");
 
-  useEffect(() => {
-    
-  }, []);
+const {setUserInfo} = useUserInfoUpdate()
 
   const history = useHistory();
   return (
@@ -35,7 +38,8 @@ const Navbar: FC = () => {
           {authToken ? (
             <span
               onClick={() => {
-                localStorage.clear();
+                localStorage.clear()
+                setUserInfo({} as IProfile)
               }}
               className="logout"
             >

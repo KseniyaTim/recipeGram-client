@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 import { PROFILE_ROUTE, REGISTER_ROUTE } from "../../consts/routeConsts";
 
 //css
-import './Login.css'
+import "./Login.css";
 
 const Login: FC = () => {
   const [userLogin, setUserLogin] = useState({
@@ -33,7 +33,7 @@ const Login: FC = () => {
 
   const loginUser = (user: {}) => {
     axios
-      .post("http://localhost:5000/user/login", user)
+      .post("http://localhost:4000/user/login", user)
       .then(({ data }) => {
         const { userId } = data;
         localStorage.setItem("userIdToken", userId);
@@ -69,7 +69,14 @@ const Login: FC = () => {
           Login
         </Button>
       </div>
-      <div className="registerLink" onClick={() => {history.push(REGISTER_ROUTE)}}>Don't have an account yet? join now</div>
+      <div
+        className="registerLink"
+        onClick={() => {
+          history.push(REGISTER_ROUTE);
+        }}
+      >
+        Don't have an account yet? join now
+      </div>
     </div>
   );
 };
