@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 //mui
-import { Card, CardContent } from "@mui/material";
+import { Card } from "@mui/material";
 
 //interface
 import { IGenericRecipe } from "./IGenericRecipe";
@@ -13,37 +13,29 @@ const GenericRecipe: FC<IGenericRecipe> = ({
   img,
   ingredients,
   name,
-  userName
+  userName,
+  instructions,
 }) => {
   return (
     <div className="cardWrapper">
       <Card sx={{ maxWidth: "50rem" }}>
-        <CardContent>
-          <div className="cardContainer">
-            <div className="leftSide">
-              <div className="title">{name}</div>
-              <img src={img} className="image" />
-              <div>Made by: {userName}</div>
-            </div>
-            <div className="rightSide">
-              <div className="title">Ingredients:</div>
-              <div>
-                {ingredients.map((element, index) => (
-                  <div key={index}>- {element}</div>
-                ))}
+        <div className="cardElementsContainer">
+          <div className="mainHeader">{name}</div>
+          <img src={img} className="image" />
+          <div className="list">
+            {ingredients.map((element, index) => (
+              <div key={index}>- {element}</div>
+            ))}
+          </div>
+          <div className="list">
+            {instructions.map((instruction, index) => (
+              <div key={index}>
+                {index + 1}) {instruction}
               </div>
-            </div>
+            ))}
           </div>
-          <div
-            className="more"
-            onClick={() => {
-              console.log("ok");
-            }}
-          >
-            for full recipe
-            <span className="material-symbols-outlined">arrow_forward_ios</span>
-          </div>
-        </CardContent>
+          <div>Made by: {userName}</div>
+        </div>
       </Card>
     </div>
   );

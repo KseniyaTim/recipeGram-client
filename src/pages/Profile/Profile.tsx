@@ -26,8 +26,8 @@ const Profile: FC = () => {
   useEffect(() => {
     const token = localStorage.getItem("userIdToken");
     if (token) {
+      console.log(userInfo)
       setUser(userInfo);
-      console.log(userInfo);
     } else {
       history.push(LOGIN_ROUTE);
     }

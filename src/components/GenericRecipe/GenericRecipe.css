@@ -3,15 +3,11 @@
   font-size: 1.3rem;
 }
 
-.cardContainer {
-  display: flex;
+.cardElementsContainer{
+  padding: 2rem
 }
 
-.rightSide{
-    padding: 0 0 0 5rem
-}
-
-.title{
+.mainHeader{
     font-size: 2rem;
     padding-bottom: 1rem;
 }
@@ -21,23 +17,7 @@
   padding-bottom: 1rem;
 }
 
-.likes{
-    display: flex;
-    align-items: center;
-}
-
-.like{
-    padding-right: 1rem;
-}
-
-.heart{
-    cursor: pointer;
-}
-
-.more{
-    display: flex;
-    align-items: center;
-    justify-content:end;
-    cursor: pointer;
+.list{
+  padding-bottom: 2rem;
 }
 
